@@ -4,5 +4,6 @@ npm i
 docker-compose up -d mysql
 sleep 5
 php artisan serve &
+php artisan queue:work &
 php artisan migrate
 php artisan command:createadmin
