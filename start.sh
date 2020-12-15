@@ -1,5 +1,5 @@
 #!/bin/bash
-php composer update
+composer update
 npm i
 docker-compose up -d mysql
 sleep 5
