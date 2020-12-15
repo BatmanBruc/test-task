@@ -38,13 +38,16 @@ class CreateAdmin extends Command
      * @return int
      */
     public function handle()
-    {
-        User::create([
-            'name' => 'admin',
-            'email' => 'esteticcus@gmail.com',
-            'type' => '1',
-            'password' => Hash::make('hasol123'),
-        ]);
+    {   $user = User::where('name', 'admin')->first();
+        if ($user == null) {
+            User::create([
+                'name' => 'admin',
+                'email' => 'esteticcus@gmail.com',
+                'type' => '1',
+                'password' => Hash::make('hasol123'),
+            ]);
+        }
+        
         return 0;
     }
 }
